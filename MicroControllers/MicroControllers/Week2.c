@@ -1,20 +1,40 @@
-/*
- * Week2.c
- *
- * Created: 5-2-2020 13:07:08
- *  Author: Ties
- */ 
-
-#define OFF 0
-#define ON 1
+#define F_CPU 8000000
 
 #include <avr/io.h>
 #include <util/delay.h>
+#include <avr/interrupt.h>
 
-int main(){
+int value = 1;
+
+int main() {
 	
+	DDRD = 0xF0;			// PORTD(7:4) output, PORTD(3:0) input	
+	
+	EICRA |= 0x0B;
+	EIMSK |= 0x03;
+		
+	sei();
+	
+	while(1){
+		
+	}
+};
+
+ISR(INT0_vect){
+	PORTD = value;
+	shift();
 }
 
-void Move_Delay() {
-	_delay_ms(500);
+ISR(INT1_vect){
+	PORTD = value;
+	shift();
+}
+
+void shift(){
+	value = value << 1;
+	
+	if (value > 128)
+	{
+		value = 1;
+	}
 }

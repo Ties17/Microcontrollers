@@ -4,6 +4,7 @@
  * Created: 5-2-2020 13:03:01
  *  Author: Ties
  */ 
+#define F_CPU 8000000
 
 #define OFF 0
 #define ON 1

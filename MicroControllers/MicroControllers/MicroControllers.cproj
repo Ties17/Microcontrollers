@@ -123,15 +123,24 @@
     </ToolchainSettings>
   </PropertyGroup>
   <ItemGroup>
+    <None Include="lcdVoorbeeld.c">
+      <SubType>compile</SubType>
+    </None>
+    <None Include="ioisr.c">
+      <SubType>compile</SubType>
+    </None>
+    <None Include="SevenSeg.c">
+      <SubType>compile</SubType>
+    </None>
     <Compile Include="Week2.c">
       <SubType>compile</SubType>
     </Compile>
     <None Include="main.c">
       <SubType>compile</SubType>
     </None>
-    <Compile Include="Week1.c">
+    <None Include="Week1.c">
       <SubType>compile</SubType>
-    </Compile>
+    </None>
   </ItemGroup>
   <Import Project="$(AVRSTUDIO_EXE_PATH)\\Vs\\Compiler.targets" />
 </Project>
