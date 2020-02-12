@@ -6,6 +6,7 @@
 
 int value = 1;
 
+
 int main() {
 	
 	DDRD = 0xF0;			// PORTD(7:4) output, PORTD(3:0) input	

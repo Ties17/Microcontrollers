@@ -123,6 +123,9 @@
     </ToolchainSettings>
   </PropertyGroup>
   <ItemGroup>
+    <Compile Include="Week2_7Seg.c">
+      <SubType>compile</SubType>
+    </Compile>
     <None Include="lcdVoorbeeld.c">
       <SubType>compile</SubType>
     </None>
@@ -132,9 +135,9 @@
     <None Include="SevenSeg.c">
       <SubType>compile</SubType>
     </None>
-    <Compile Include="Week2.c">
+    <None Include="Week2Interrupts.c">
       <SubType>compile</SubType>
-    </Compile>
+    </None>
     <None Include="main.c">
       <SubType>compile</SubType>
     </None>
