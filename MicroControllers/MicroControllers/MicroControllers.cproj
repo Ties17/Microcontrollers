@@ -41,6 +41,18 @@
       </ToolNumber>
       <ToolName xmlns="">Simulator</ToolName>
     </com_atmel_avrdbg_tool_simulator>
+    <AsfFrameworkConfig>
+      <framework-data xmlns="">
+  <options />
+  <configurations />
+  <files />
+  <documentation help="" />
+  <offline-documentation help="" />
+  <dependencies>
+    <content-extension eid="atmel.asf" uuidref="Atmel.ASF" version="3.47.0" />
+  </dependencies>
+</framework-data>
+    </AsfFrameworkConfig>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)' == 'Release' ">
     <ToolchainSettings>
@@ -132,6 +144,12 @@
     <None Include="ioisr.c">
       <SubType>compile</SubType>
     </None>
+    <Compile Include="lcd.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="lcd.h">
+      <SubType>compile</SubType>
+    </Compile>
     <None Include="SevenSeg.c">
       <SubType>compile</SubType>
     </None>

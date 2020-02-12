@@ -1,18 +1,3 @@
-/* ---------------------------------------------------------------------------
-** This software is in the public domain, furnished "as is", without technical
-** support, and with no warranty, express or implied, as to its usefulness for
-** any purpose.
-**
-** ioisr.c
-**
-** Beschrijving:	BigAVR LCD module
-** Target:			AVR mcu
-** Build:			avr-gcc -std=c99 -Wall -O3 -mmcu=atmega128 -D F_CPU=8000000UL -c lcd.c
-**					avr-gcc -g -mmcu=atmega128 -o lcd.elf lcd.o
-**					avr-objcopy -O ihex lcd.elf lcd.hex
-**					or type 'make'
-** Author: 			dkroeske@gmail.com
-** -------------------------------------------------------------------------*/
 
 #define F_CPU 8000000
 #include <avr/io.h>
@@ -30,13 +15,6 @@ void lcd_write_cmd(unsigned char byte);
 
 /******************************************************************/
 void lcd_strobe_lcd_e(void)
-/*
-short:			Strobe LCD module E pin --__
-inputs:
-outputs:
-notes:			According datasheet HD44780
-Version :    	DMK, Initial code
-*******************************************************************/
 {
 	_delay_ms(1);	
 		PORTC |= (1<<LCD_E);	// E high

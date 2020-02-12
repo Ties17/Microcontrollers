@@ -3,8 +3,9 @@
 #include <avr/io.h>
 #include <util/delay.h>
 #include <avr/interrupt.h>
+#include "lcd.h"
 
-const unsigned char Numbers [15] =
+const unsigned char Numbers [16] =
 {//		dPgf edcba
 	0b00111111,// 0
 	0b00000110,// 1
@@ -21,20 +22,28 @@ const unsigned char Numbers [15] =
 	0b00111001,// c
 	0b01011110,// d
 	0b01111001,// e
-	0b01110001,// f
+	0b01110001// f
 };
 
 
 
 int main(){
-	
-	DDRD = 0xFF;
-	while(1){
-		for (int i = 0 ; i <= sizeof(Numbers); i++)
-		{
-			PORTD = Numbers[i];
-			_delay_ms(1000);
-		}
-		PORTD = 0x00;
-	}	
+	init();
+	set_cursor(0);
+	display_text("H");
+	set_cursor(2);
+	display_text("Y");
+	set_cursor(4);
+	display_text("K");
+	set_cursor(6);
+	display_text("JAntje");
+// 	DDRD = 0xFF;
+// 	while(1){
+// 		for (int i = 0 ; i <= sizeof(Numbers); i++)
+// 		{
+// 			PORTD = Numbers[i];
+// 			_delay_ms(1000);
+// 		}
+// 		PORTD = 0x00;
+// 	}	
 }
