@@ -132,49 +132,49 @@ void spi_writeWord( unsigned char adress, unsigned char data ){
 }
 
 // toont de waarde van value op het 4-digit display
-void writeLedDisplay( int value ){
-	if (value == 0)
-	{
-		spi_writeWord(4, 0);
-		spi_writeWord(3, 0);
-		spi_writeWord(2, 0);
-		spi_writeWord(1, 0);
+	void writeLedDisplay( int value ){
+		if (value == 0)
+		{
+			spi_writeWord(4, 0);
+			spi_writeWord(3, 0);
+			spi_writeWord(2, 0);
+			spi_writeWord(1, 0);
 		
-	} else if(value > 0){
+		} else if(value > 0){
 		
-	int firstDigit = value / 1000;
-	spi_writeWord(4, firstDigit);
-	value -= firstDigit * 1000;
+		int firstDigit = value / 1000;
+		spi_writeWord(4, firstDigit);
+		value -= firstDigit * 1000;
 	
-	int secondDigit = value / 100;
-	spi_writeWord(3, secondDigit);
-	value -= secondDigit * 100;
+		int secondDigit = value / 100;
+		spi_writeWord(3, secondDigit);
+		value -= secondDigit * 100;
 	
-	int thirdDigit = value / 10;
-	spi_writeWord(2, thirdDigit);
-	value -= thirdDigit * 10;
+		int thirdDigit = value / 10;
+		spi_writeWord(2, thirdDigit);
+		value -= thirdDigit * 10;
 	
-	spi_writeWord(1, value);
+		spi_writeWord(1, value);
 	
-	} else if (value < 0 && value > -1000){
+		} else if (value < 0 && value > -1000){
 		
-	spi_writeWord(4, 0b00001010);
+		spi_writeWord(4, 0b00001010);
 	
-	value = value * -1;
+		value = value * -1;
 	
-	int secondDigit = value / 100;
-	spi_writeWord(3, secondDigit);
-	value -= secondDigit * 100;
+		int secondDigit = value / 100;
+		spi_writeWord(3, secondDigit);
+		value -= secondDigit * 100;
 	
-	int thirdDigit = value / 10;
-	spi_writeWord(2, thirdDigit);
-	value -= thirdDigit * 10;
+		int thirdDigit = value / 10;
+		spi_writeWord(2, thirdDigit);
+		value -= thirdDigit * 10;
 	
-	spi_writeWord(1, value);
+		spi_writeWord(1, value);
+		}
+	
+	
 	}
-	
-	
-}
 
 int main()
 {
@@ -184,15 +184,10 @@ int main()
 	displayDriverInit();            // Initialize display chip
 
  	writeLedDisplay(0);
-
-
-	
-	
+	 
 	writeLedDisplay(-651);
 	
 	wait(1000);
-
-
 
   	return (1);
 }
