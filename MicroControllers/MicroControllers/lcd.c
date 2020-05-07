@@ -40,6 +40,7 @@ void init() {
 void display_text(char *str) {
 	for(;*str; str++){
 		lcd_write_data(*str);
+		_delay_ms(20);
 	}
 }
 
