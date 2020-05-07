@@ -43,15 +43,15 @@
     </com_atmel_avrdbg_tool_simulator>
     <AsfFrameworkConfig>
       <framework-data xmlns="">
-  <options />
-  <configurations />
-  <files />
-  <documentation help="" />
-  <offline-documentation help="" />
-  <dependencies>
-    <content-extension eid="atmel.asf" uuidref="Atmel.ASF" version="3.47.0" />
-  </dependencies>
-</framework-data>
+        <options />
+        <configurations />
+        <files />
+        <documentation help="" />
+        <offline-documentation help="" />
+        <dependencies>
+          <content-extension eid="atmel.asf" uuidref="Atmel.ASF" version="3.47.0" />
+        </dependencies>
+      </framework-data>
     </AsfFrameworkConfig>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)' == 'Release' ">
@@ -135,24 +135,24 @@
     </ToolchainSettings>
   </PropertyGroup>
   <ItemGroup>
-    <Compile Include="Week3.c">
-      <SubType>compile</SubType>
-    </Compile>
-    <None Include="Week2_7Seg.c">
+    <None Include="Week3.c">
       <SubType>compile</SubType>
     </None>
+    <Compile Include="Week2_7Seg.c">
+      <SubType>compile</SubType>
+    </Compile>
     <None Include="lcdVoorbeeld.c">
       <SubType>compile</SubType>
     </None>
     <None Include="ioisr.c">
       <SubType>compile</SubType>
     </None>
-    <Compile Include="lcd.c">
+    <None Include="lcd.c">
       <SubType>compile</SubType>
-    </Compile>
-    <Compile Include="lcd.h">
+    </None>
+    <None Include="lcd.h">
       <SubType>compile</SubType>
-    </Compile>
+    </None>
     <None Include="SevenSeg.c">
       <SubType>compile</SubType>
     </None>
