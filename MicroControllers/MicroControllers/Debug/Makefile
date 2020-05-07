@@ -37,7 +37,7 @@ SUBDIRS :=
 
 # Add inputs and outputs from these tool invocations to the build variables 
 C_SRCS +=  \
-../Week2_7Seg.c \
+../Week3.c \
 ../lcd.c
 
 
@@ -48,19 +48,19 @@ ASM_SRCS +=
 
 
 OBJS +=  \
-Week2_7Seg.o \
+Week3.o \
 lcd.o
 
 OBJS_AS_ARGS +=  \
-Week2_7Seg.o \
+Week3.o \
 lcd.o
 
 C_DEPS +=  \
-Week2_7Seg.d \
+Week3.d \
 lcd.d
 
 C_DEPS_AS_ARGS +=  \
-Week2_7Seg.d \
+Week3.d \
 lcd.d
 
 OUTPUT_FILE_PATH +=MicroControllers.elf
@@ -77,7 +77,7 @@ LINKER_SCRIPT_DEP+=
 
 
 # AVR32/GNU C Compiler
-./Week2_7Seg.o: .././Week2_7Seg.c
+./Week3.o: .././Week3.c
 	@echo Building file: $<
 	@echo Invoking: AVR/GNU C Compiler : 5.4.0
 	$(QUOTE)D:\Atmel\7.0\toolchain\avr8\avr8-gnu-toolchain\bin\avr-gcc.exe$(QUOTE)  -x c -funsigned-char -funsigned-bitfields -DDEBUG  -I"D:\Atmel\7.0\Packs\atmel\ATmega_DFP\1.3.300\include"  -O1 -ffunction-sections -fdata-sections -fpack-struct -fshort-enums -mrelax -g2 -Wall -mmcu=atmega128a -B "D:\Atmel\7.0\Packs\atmel\ATmega_DFP\1.3.300\gcc\dev\atmega128a" -c -std=gnu99 -MD -MP -MF "$(@:%.o=%.d)" -MT"$(@:%.o=%.d)" -MT"$(@:%.o=%.o)"   -o "$@" "$<" 
